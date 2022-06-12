@@ -15,6 +15,7 @@ int main(int argc, char* argv[]){
 		fprintf(fp,ds->d_name);
 		fprintf(fp,"\n");
 	}
+
 	closedir(dir);
 	fclose(fp);
 	return 0;
