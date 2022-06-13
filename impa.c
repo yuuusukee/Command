@@ -36,6 +36,7 @@ int main(int argc, char* argv[]){
 			fprintf(fp,"\n");
 		}
 	}
+
 	closedir(dir);
 	fclose(fp);
 	return 0;
