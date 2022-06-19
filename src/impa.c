@@ -11,6 +11,7 @@ static void argument_error(){
 	printf("Please specify 3 arguments\n");
 	exit(0);
 }
+
 int main(int argc, char* argv[]){
 	DIR *dir;
 	FILE *fp;
@@ -30,13 +31,14 @@ int main(int argc, char* argv[]){
 		dir_error();
 	}
 	for(ds = readdir(dir); ds != NULL; ds = readdir(dir) ){
-		printf("%s",ds[0]);
-		if(strcmp(ds->d_name[0],".")==1 || strcmp(ds->d_name,"..")==1){
+		printf("%s",ds->d_name);
+		printf("\n");
+		if(strcmp(ds->d_name,"..")==0 || strcmp(ds->d_name,".")==0){
+		}else {
 			fprintf(fp,ds->d_name);
 			fprintf(fp,"\n");
 		}
 	}
-
 	closedir(dir);
 	fclose(fp);
 	return 0;
